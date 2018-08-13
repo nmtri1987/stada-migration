@@ -1,0 +1,20 @@
+﻿th.jsgrid-control-field, td.jsgrid-control-field {
+    width: 60px !important;
+}
+
+.jsgrid .jsgrid-button {
+	min-width: 16px !important;
+    margin: 0px;
+}
+
+.jsgrid-header-row>.jsgrid-header-cell {
+    background: #eff1f4 !important;
+}
+.ui-button .ui-icon {
+	background-image: url("../../libs/jquery/images/ui-icons_777777_256x240.png")  !important;
+	min-width: 16px !important;
+}
+
+.ui-dialog-titlebar-close {
+	min-width: 15px;
+}

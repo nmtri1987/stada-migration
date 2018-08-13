@@ -1,0 +1,759 @@
+[
+  {
+    "outputFileName": "Layouts/RBVH.Stada.Intranet.Branding/libs/URI/URI.min.js",
+    "inputFiles": [
+      "Layouts/RBVH.Stada.Intranet.Branding/libs/URI/URI.js"
+    ]
+  },
+  {
+    "outputFileName": "Layouts/RBVH.Stada.Intranet.Branding/libs/moment/moment.min.js",
+    "inputFiles": [
+      "Layouts/RBVH.Stada.Intranet.Branding/libs/moment/moment.js"
+    ]
+  },
+  {
+    "outputFileName": "Layouts/RBVH.Stada.Intranet.Branding/libs/modernizr/modernizr.min.js",
+    "inputFiles": [
+      "Layouts/RBVH.Stada.Intranet.Branding/libs/modernizr/modernizr.js"
+    ]
+  },
+  {
+    "outputFileName": "Layouts/RBVH.Stada.Intranet.Branding/css/BusinessTripModule/BusinessTripRequestForm.min.css",
+    "inputFiles": [
+      "Layouts/RBVH.Stada.Intranet.Branding/css/BusinessTripModule/BusinessTripRequestForm.css"
+    ]
+  },
+  {
+    "outputFileName": "Layouts/RBVH.Stada.Intranet.Branding/css/calendar/minicalendar.min.css",
+    "inputFiles": [
+      "Layouts/RBVH.Stada.Intranet.Branding/css/calendar/minicalendar.css"
+    ]
+  },
+  {
+    "outputFileName": "Layouts/RBVH.Stada.Intranet.Branding/css/Common/BaseListPage.min.css",
+    "inputFiles": [
+      "Layouts/RBVH.Stada.Intranet.Branding/css/Common/BaseListPage.css"
+    ]
+  },
+  {
+    "outputFileName": "Layouts/RBVH.Stada.Intranet.Branding/css/DelegationModule/DelegationList.min.css",
+    "inputFiles": [
+      "Layouts/RBVH.Stada.Intranet.Branding/css/DelegationModule/DelegationList.css"
+    ]
+  },
+  {
+    "outputFileName": "Layouts/RBVH.Stada.Intranet.Branding/css/FreightModule/FreightRequestForm.min.css",
+    "inputFiles": [
+      "Layouts/RBVH.Stada.Intranet.Branding/css/FreightModule/FreightRequestForm.css"
+    ]
+  },
+  {
+    "outputFileName": "Layouts/RBVH.Stada.Intranet.Branding/css/IdealImageSlider/ideal-default.min.css",
+    "inputFiles": [
+      "Layouts/RBVH.Stada.Intranet.Branding/css/IdealImageSlider/ideal-default.css"
+    ]
+  },
+  {
+    "outputFileName": "Layouts/RBVH.Stada.Intranet.Branding/css/IdealImageSlider/ideal-image-slider.min.css",
+    "inputFiles": [
+      "Layouts/RBVH.Stada.Intranet.Branding/css/IdealImageSlider/ideal-image-slider.css"
+    ]
+  },
+  {
+    "outputFileName": "Layouts/RBVH.Stada.Intranet.Branding/css/IdealImageSlider/normalize.min.css",
+    "inputFiles": [
+      "Layouts/RBVH.Stada.Intranet.Branding/css/IdealImageSlider/normalize.css"
+    ]
+  },
+  {
+    "outputFileName": "Layouts/RBVH.Stada.Intranet.Branding/css/LeaveModule/default.min.css",
+    "inputFiles": [
+      "Layouts/RBVH.Stada.Intranet.Branding/css/LeaveModule/default.css"
+    ]
+  },
+  {
+    "outputFileName": "Layouts/RBVH.Stada.Intranet.Branding/css/LoginPage/Login_form.min.css",
+    "inputFiles": [
+      "Layouts/RBVH.Stada.Intranet.Branding/css/LoginPage/Login_form.css"
+    ]
+  },
+  {
+    "outputFileName": "Layouts/RBVH.Stada.Intranet.Branding/css/OvertimeModule/default.min.css",
+    "inputFiles": [
+      "Layouts/RBVH.Stada.Intranet.Branding/css/OvertimeModule/default.css"
+    ]
+  },
+  {
+    "outputFileName": "Layouts/RBVH.Stada.Intranet.Branding/css/OverviewModule/default.min.css",
+    "inputFiles": [
+      "Layouts/RBVH.Stada.Intranet.Branding/css/OverviewModule/default.css"
+    ]
+  },
+  {
+    "outputFileName": "Layouts/RBVH.Stada.Intranet.Branding/css/peoplePicker/peoplepickercontrol.min.css",
+    "inputFiles": [
+      "Layouts/RBVH.Stada.Intranet.Branding/css/peoplePicker/peoplepickercontrol.css"
+    ]
+  },
+  {
+    "outputFileName": "Layouts/RBVH.Stada.Intranet.Branding/css/RecruitmentModule/RecruitmentModule.min.css",
+    "inputFiles": [
+      "Layouts/RBVH.Stada.Intranet.Branding/css/RecruitmentModule/RecruitmentModule.css"
+    ]
+  },
+  {
+    "outputFileName": "Layouts/RBVH.Stada.Intranet.Branding/css/RequestModule/RequestsForm.min.css",
+    "inputFiles": [
+      "Layouts/RBVH.Stada.Intranet.Branding/css/RequestModule/RequestsForm.css"
+    ]
+  },
+  {
+    "outputFileName": "Layouts/RBVH.Stada.Intranet.Branding/css/ShiftModule/default.min.css",
+    "inputFiles": [
+      "Layouts/RBVH.Stada.Intranet.Branding/css/ShiftModule/default.css"
+    ]
+  },
+  {
+    "outputFileName": "Layouts/RBVH.Stada.Intranet.Branding/css/ShiftModule/gird-style.min.css",
+    "inputFiles": [
+      "Layouts/RBVH.Stada.Intranet.Branding/css/ShiftModule/gird-style.css"
+    ]
+  },
+  {
+    "outputFileName": "Layouts/RBVH.Stada.Intranet.Branding/css/main.min.css",
+    "inputFiles": [
+      "Layouts/RBVH.Stada.Intranet.Branding/css/main.css"
+    ]
+  },
+  {
+    "outputFileName": "Layouts/RBVH.Stada.Intranet.Branding/scripts/BusinessTripModule/BusinessTripByDepartment.min.js",
+    "inputFiles": [
+      "Layouts/RBVH.Stada.Intranet.Branding/scripts/BusinessTripModule/BusinessTripByDepartment.js"
+    ]
+  },
+  {
+    "outputFileName": "Layouts/RBVH.Stada.Intranet.Branding/scripts/BusinessTripModule/BusinessTripRequest.min.js",
+    "inputFiles": [
+      "Layouts/RBVH.Stada.Intranet.Branding/scripts/BusinessTripModule/BusinessTripRequest.js"
+    ]
+  },
+  {
+    "outputFileName": "Layouts/RBVH.Stada.Intranet.Branding/scripts/BusinessTripModule/JSLink_Business.js",
+    "inputFiles": [
+      "Layouts/RBVH.Stada.Intranet.Branding/scripts/BusinessTripModule/JSLink_BusinessTrip_Approval.js",
+      "Layouts/RBVH.Stada.Intranet.Branding/scripts/BusinessTripModule/JSLink_BusinessTrip_ByDepartment.js",
+      "Layouts/RBVH.Stada.Intranet.Branding/scripts/BusinessTripModule/JSLink_BusinessTrip_ByExtAdmin.js",
+      "Layouts/RBVH.Stada.Intranet.Branding/scripts/BusinessTripModule/JSLink_BusinessTrip_Cashier.js",
+      "Layouts/RBVH.Stada.Intranet.Branding/scripts/BusinessTripModule/JSLink_BusinessTrip_Driver.js",
+      "Layouts/RBVH.Stada.Intranet.Branding/scripts/BusinessTripModule/JSLink_BusinessTrip_List.js",
+      "Layouts/RBVH.Stada.Intranet.Branding/scripts/BusinessTripModule/JSLink_MyBusinessTrip.js"
+    ]
+  },
+  {
+    "outputFileName": "Layouts/RBVH.Stada.Intranet.Branding/scripts/Calendar/CalendarCustomLayout.min.js",
+    "inputFiles": [
+      "Layouts/RBVH.Stada.Intranet.Branding/scripts/Calendar/CalendarCustomLayout.js"
+    ]
+  },
+  {
+    "outputFileName": "Layouts/RBVH.Stada.Intranet.Branding/scripts/Calendar/JSLinkCalendar.min.js",
+    "inputFiles": [
+      "Layouts/RBVH.Stada.Intranet.Branding/scripts/Calendar/JSLinkCalendar.js"
+    ]
+  },
+  {
+    "outputFileName": "Layouts/RBVH.Stada.Intranet.Branding/scripts/Calendar/JSLinkCalendar_2.min.js",
+    "inputFiles": [
+      "Layouts/RBVH.Stada.Intranet.Branding/scripts/Calendar/JSLinkCalendar_2.js"
+    ]
+  },
+  {
+    "outputFileName": "Layouts/RBVH.Stada.Intranet.Branding/scripts/ChangeShiftModule/ChangeShiftByDepartment.min.js",
+    "inputFiles": [
+      "Layouts/RBVH.Stada.Intranet.Branding/scripts/ChangeShiftModule/ChangeShiftByDepartment.js"
+    ]
+  },
+  {
+    "outputFileName": "Layouts/RBVH.Stada.Intranet.Branding/scripts/ChangeShiftModule/JSLink_ChangeShiftRequest_NewForm.min.js",
+    "inputFiles": [
+      "Layouts/RBVH.Stada.Intranet.Branding/scripts/ChangeShiftModule/JSLink_ChangeShiftRequest_NewForm.js"
+    ]
+  },
+  {
+    "outputFileName": "Layouts/RBVH.Stada.Intranet.Branding/scripts/ChangeShiftModule/JSLink_ChangeShift.js",
+    "inputFiles": [
+      "Layouts/RBVH.Stada.Intranet.Branding/scripts/ChangeShiftModule/JSLink_ChangeShiftRequest_ByDepartment_View.js",
+      "Layouts/RBVH.Stada.Intranet.Branding/scripts/ChangeShiftModule/JSLink_ChangeShiftRequest_View.js",
+      "Layouts/RBVH.Stada.Intranet.Branding/scripts/ChangeShiftModule/JSLink_TaskList_ChangeShift_Approval.js"
+    ]
+  },
+  {
+    "outputFileName": "Layouts/RBVH.Stada.Intranet.Branding/scripts/Common/Constant.min.js",
+    "inputFiles": [
+      "Layouts/RBVH.Stada.Intranet.Branding/scripts/Common/Constant.js"
+    ]
+  },
+  {
+    "outputFileName": "Layouts/RBVH.Stada.Intranet.Branding/scripts/Common/ListBasePage.min.js",
+    "inputFiles": [
+      "Layouts/RBVH.Stada.Intranet.Branding/scripts/Common/ListBasePage.js"
+    ]
+  },
+  {
+    "outputFileName": "Layouts/RBVH.Stada.Intranet.Branding/scripts/Common/SupportingDocument.min.js",
+    "inputFiles": [
+      "Layouts/RBVH.Stada.Intranet.Branding/scripts/Common/SupportingDocument.js"
+    ]
+  },
+  {
+    "outputFileName": "Layouts/RBVH.Stada.Intranet.Branding/scripts/Common/Utilities.min.js",
+    "inputFiles": [
+      "Layouts/RBVH.Stada.Intranet.Branding/scripts/Common/Utilities.js"
+    ]
+  },
+  {
+    "outputFileName": "Layouts/RBVH.Stada.Intranet.Branding/scripts/DelegationModule/DelegationForm.min.js",
+    "inputFiles": [
+      "Layouts/RBVH.Stada.Intranet.Branding/scripts/DelegationModule/DelegationForm.js"
+    ]
+  },
+  {
+    "outputFileName": "Layouts/RBVH.Stada.Intranet.Branding/scripts/DelegationModule/DelegationList.min.js",
+    "inputFiles": [
+      "Layouts/RBVH.Stada.Intranet.Branding/scripts/DelegationModule/DelegationList.js"
+    ]
+  },
+  {
+    "outputFileName": "Layouts/RBVH.Stada.Intranet.Branding/scripts/EmployeeInfo/JSLink_EmployeeInfo_NewForm.min.js",
+    "inputFiles": [
+      "Layouts/RBVH.Stada.Intranet.Branding/scripts/EmployeeInfo/JSLink_EmployeeInfo_NewForm.js"
+    ]
+  },
+  {
+    "outputFileName": "Layouts/RBVH.Stada.Intranet.Branding/scripts/EmployeeInfo/ResetPasswordPage.min.js",
+    "inputFiles": [
+      "Layouts/RBVH.Stada.Intranet.Branding/scripts/EmployeeInfo/ResetPasswordPage.js"
+    ]
+  },
+  {
+    "outputFileName": "Layouts/RBVH.Stada.Intranet.Branding/scripts/FreightModule/FreightByDepartment.min.js",
+    "inputFiles": [
+      "Layouts/RBVH.Stada.Intranet.Branding/scripts/FreightModule/FreightByDepartment.js"
+    ]
+  },
+  {
+    "outputFileName": "Layouts/RBVH.Stada.Intranet.Branding/scripts/FreightModule/FreightRequest.min.js",
+    "inputFiles": [
+      "Layouts/RBVH.Stada.Intranet.Branding/scripts/FreightModule/FreightRequest.js"
+    ]
+  },
+  {
+    "outputFileName": "Layouts/RBVH.Stada.Intranet.Branding/scripts/FreightModule/FreightSecurityGuard.min.js",
+    "inputFiles": [
+      "Layouts/RBVH.Stada.Intranet.Branding/scripts/FreightModule/FreightSecurityGuard.js"
+    ]
+  },
+  {
+    "outputFileName": "Layouts/RBVH.Stada.Intranet.Branding/scripts/FreightModule/JSLink_Freight.js",
+    "inputFiles": [
+      "Layouts/RBVH.Stada.Intranet.Branding/scripts/FreightModule/JSLink_FreightRequest_Approval.js",
+      "Layouts/RBVH.Stada.Intranet.Branding/scripts/FreightModule/JSLink_FreightRequest_ByDepartment.js",
+      "Layouts/RBVH.Stada.Intranet.Branding/scripts/FreightModule/JSLink_FreightRequest_List.js",
+      "Layouts/RBVH.Stada.Intranet.Branding/scripts/FreightModule/JSLink_FreightRequest_SecurityGuard.js",
+      "Layouts/RBVH.Stada.Intranet.Branding/scripts/FreightModule/JSLink_FreightRequest_VehicleOparator.js",
+      "Layouts/RBVH.Stada.Intranet.Branding/scripts/FreightModule/JSLink_MyFreight_List.js"
+    ]
+  },
+  {
+    "outputFileName": "Layouts/RBVH.Stada.Intranet.Branding/scripts/HomeList/JSLink_Announcement_DisplayForm.min.js",
+    "inputFiles": [
+      "Layouts/RBVH.Stada.Intranet.Branding/scripts/HomeList/JSLink_Announcement_DisplayForm.js"
+    ]
+  },
+  {
+    "outputFileName": "Layouts/RBVH.Stada.Intranet.Branding/scripts/HomeList/JSLink_AnnouncementForm.min.js",
+    "inputFiles": [
+      "Layouts/RBVH.Stada.Intranet.Branding/scripts/HomeList/JSLink_AnnouncementForm.js"
+    ]
+  },
+  {
+    "outputFileName": "Layouts/RBVH.Stada.Intranet.Branding/scripts/HomeList/JSLink_AnnouncementForm.min.js",
+    "inputFiles": [
+      "Layouts/RBVH.Stada.Intranet.Branding/scripts/HomeList/JSLink_AnnouncementForm.js"
+    ]
+  },
+  {
+    "outputFileName": "Layouts/RBVH.Stada.Intranet.Branding/scripts/HomeList/JSLink_Announncement_View.min.js",
+    "inputFiles": [
+      "Layouts/RBVH.Stada.Intranet.Branding/scripts/HomeList/JSLink_Announncement_View.js"
+    ]
+  },
+  {
+    "outputFileName": "Layouts/RBVH.Stada.Intranet.Branding/scripts/HomeList/JsLink_Links.min.js",
+    "inputFiles": [
+      "Layouts/RBVH.Stada.Intranet.Branding/scripts/HomeList/JsLink_Links.js"
+    ]
+  },
+  {
+    "outputFileName": "Layouts/RBVH.Stada.Intranet.Branding/scripts/IdealImageSlider/ideal-image-slider.min.js",
+    "inputFiles": [
+      "Layouts/RBVH.Stada.Intranet.Branding/scripts/IdealImageSlider/ideal-image-slider.js"
+    ]
+  },
+  {
+    "outputFileName": "Layouts/RBVH.Stada.Intranet.Branding/scripts/IdealImageSlider/iis-bullet-nav.min.js",
+    "inputFiles": [
+      "Layouts/RBVH.Stada.Intranet.Branding/scripts/IdealImageSlider/iis-bullet-nav.js"
+    ]
+  },
+  {
+    "outputFileName": "Layouts/RBVH.Stada.Intranet.Branding/scripts/IdealImageSlider/JsLink_IdealImageSlider.min.js",
+    "inputFiles": [
+      "Layouts/RBVH.Stada.Intranet.Branding/scripts/IdealImageSlider/JsLink_IdealImageSlider.js"
+    ]
+  },
+  {
+    "outputFileName": "Layouts/RBVH.Stada.Intranet.Branding/scripts/JSLinkCommon/WorkflowTaskList/JSLink_WorkflowTaskList_DisplayForm.min.js",
+    "inputFiles": [
+      "Layouts/RBVH.Stada.Intranet.Branding/scripts/JSLinkCommon/WorkflowTaskList/JSLink_WorkflowTaskList_DisplayForm.js"
+    ]
+  },
+  {
+    "outputFileName": "Layouts/RBVH.Stada.Intranet.Branding/scripts/JSLinkCommon/WorkflowTaskList/JSLink_WorkflowTaskList_EditForm.min.js",
+    "inputFiles": [
+      "Layouts/RBVH.Stada.Intranet.Branding/scripts/JSLinkCommon/WorkflowTaskList/JSLink_WorkflowTaskList_EditForm.js"
+    ]
+  },
+  {
+    "outputFileName": "Layouts/RBVH.Stada.Intranet.Branding/css/LeaveModule/default.min.css",
+    "inputFiles": [
+      "Layouts/RBVH.Stada.Intranet.Branding/css/LeaveModule/default.css"
+    ]
+  },
+  {
+    "outputFileName": "Layouts/RBVH.Stada.Intranet.Branding/scripts/LeaveModule/JsLink_Leave.js",
+    "inputFiles": [
+      "Layouts/RBVH.Stada.Intranet.Branding/scripts/LeaveModule/JSLink_LeaveHistory.js",
+      "Layouts/RBVH.Stada.Intranet.Branding/scripts/LeaveModule/JSLink_LeaveRequest_Approval.js",
+      "Layouts/RBVH.Stada.Intranet.Branding/scripts/LeaveModule/JSLink_LeaveRequest_ByDepartment.js",
+      "Layouts/RBVH.Stada.Intranet.Branding/scripts/LeaveModule/JSLink_LeaveRequest_List.js",
+      "Layouts/RBVH.Stada.Intranet.Branding/scripts/LeaveModule/JSLink_LeaveRequest_SecurityGuard.js"
+    ]
+  },
+  {
+    "outputFileName": "Layouts/RBVH.Stada.Intranet.Branding/scripts/LeaveModule/JsLink_LeaveApprovalTaskList_View.min.js",
+    "inputFiles": [
+      "Layouts/RBVH.Stada.Intranet.Branding/scripts/LeaveModule/JsLink_LeaveApprovalTaskList_View.js"
+    ]
+  },
+  {
+    "outputFileName": "Layouts/RBVH.Stada.Intranet.Branding/scripts/LeaveModule/JSLink_LeaveManagement_Form.min.js",
+    "inputFiles": [
+      "Layouts/RBVH.Stada.Intranet.Branding/scripts/LeaveModule/JSLink_LeaveManagement_Form.js"
+    ]
+  },
+  {
+    "outputFileName": "Layouts/RBVH.Stada.Intranet.Branding/scripts/LeaveModule/JSLink_TodayLeave.min.js",
+    "inputFiles": [
+      "Layouts/RBVH.Stada.Intranet.Branding/scripts/LeaveModule/JSLink_TodayLeave.js"
+    ]
+  },
+  {
+    "outputFileName": "Layouts/RBVH.Stada.Intranet.Branding/scripts/LeaveModule/LeaveByDepartment.min.js",
+    "inputFiles": [
+      "Layouts/RBVH.Stada.Intranet.Branding/scripts/LeaveModule/LeaveByDepartment.js"
+    ]
+  },
+  {
+    "outputFileName": "Layouts/RBVH.Stada.Intranet.Branding/scripts/LeaveModule/LeaveHistory.min.js",
+    "inputFiles": [
+      "Layouts/RBVH.Stada.Intranet.Branding/scripts/LeaveModule/LeaveHistory.js"
+    ]
+  },
+  {
+    "outputFileName": "Layouts/RBVH.Stada.Intranet.Branding/scripts/LeaveModule/LeavePeoplePicker.min.js",
+    "inputFiles": [
+      "Layouts/RBVH.Stada.Intranet.Branding/scripts/LeaveModule/LeavePeoplePicker.js"
+    ]
+  },
+  {
+    "outputFileName": "Layouts/RBVH.Stada.Intranet.Branding/scripts/LeaveModule/LeaveRequest.min.js",
+    "inputFiles": [
+      "Layouts/RBVH.Stada.Intranet.Branding/scripts/LeaveModule/LeaveRequest.js"
+    ]
+  },
+  {
+    "outputFileName": "Layouts/RBVH.Stada.Intranet.Branding/scripts/LeaveModule/LeaveSecurityGuard.min.js",
+    "inputFiles": [
+      "Layouts/RBVH.Stada.Intranet.Branding/scripts/LeaveModule/LeaveSecurityGuard.js"
+    ]
+  },
+  {
+    "outputFileName": "Layouts/RBVH.Stada.Intranet.Branding/scripts/NewsModule/JSLink_InternalNews.min.js",
+    "inputFiles": [
+      "Layouts/RBVH.Stada.Intranet.Branding/scripts/NewsModule/JSLink_InternalNews.js"
+    ]
+  },
+  {
+    "outputFileName": "Layouts/RBVH.Stada.Intranet.Branding/scripts/NewsModule/JSLink_InternalNewsHome.min.js",
+    "inputFiles": [
+      "Layouts/RBVH.Stada.Intranet.Branding/scripts/NewsModule/JSLink_InternalNewsHome.js"
+    ]
+  },
+  {
+    "outputFileName": "Layouts/RBVH.Stada.Intranet.Branding/scripts/NewsModule/JSLink_MedicalNews.min.js",
+    "inputFiles": [
+      "Layouts/RBVH.Stada.Intranet.Branding/scripts/NewsModule/JSLink_MedicalNews.js"
+    ]
+  },
+  {
+    "outputFileName": "Layouts/RBVH.Stada.Intranet.Branding/scripts/NewsModule/JSLink_MedicalNewsHome.min.js",
+    "inputFiles": [
+      "Layouts/RBVH.Stada.Intranet.Branding/scripts/NewsModule/JSLink_MedicalNewsHome.js"
+    ]
+  },
+  {
+    "outputFileName": "Layouts/RBVH.Stada.Intranet.Branding/scripts/NewsModule/JSlink_NewsForm.min.js",
+    "inputFiles": [
+      "Layouts/RBVH.Stada.Intranet.Branding/scripts/NewsModule/JSlink_NewsForm.js"
+    ]
+  },
+  {
+    "outputFileName": "Layouts/RBVH.Stada.Intranet.Branding/scripts/NewsModule/JSLink_ViewInternalNews.min.js",
+    "inputFiles": [
+      "Layouts/RBVH.Stada.Intranet.Branding/scripts/NewsModule/JSLink_ViewInternalNews.js"
+    ]
+  },
+  {
+    "outputFileName": "Layouts/RBVH.Stada.Intranet.Branding/scripts/NewsModule/JSLink_ViewMedicalNews.min.js",
+    "inputFiles": [
+      "Layouts/RBVH.Stada.Intranet.Branding/scripts/NewsModule/JSLink_ViewMedicalNews.js"
+    ]
+  },
+  {
+    "outputFileName": "Layouts/RBVH.Stada.Intranet.Branding/css/OvertimeModule/default.min.css",
+    "inputFiles": [
+      "Layouts/RBVH.Stada.Intranet.Branding/css/OvertimeModule/default.css"
+    ]
+  },
+  {
+    "outputFileName": "Layouts/RBVH.Stada.Intranet.Branding/scripts/NotOvertimeModule/JSLink_NotOvertimeForm.min.js",
+    "inputFiles": [
+      "Layouts/RBVH.Stada.Intranet.Branding/scripts/NotOvertimeModule/JSLink_NotOvertimeForm.js"
+    ]
+  },
+  {
+    "outputFileName": "Layouts/RBVH.Stada.Intranet.Branding/scripts/NotOvertimeModule/JSLink_NotOvertimeView.min.js",
+    "inputFiles": [
+      "Layouts/RBVH.Stada.Intranet.Branding/scripts/NotOvertimeModule/JSLink_NotOvertimeView.js"
+    ]
+  },
+  {
+    "outputFileName": "Layouts/RBVH.Stada.Intranet.Branding/scripts/NotOvertimeModule/JSLink_TaskList_NotOvertime_Approval.min.js",
+    "inputFiles": [
+      "Layouts/RBVH.Stada.Intranet.Branding/scripts/NotOvertimeModule/JSLink_TaskList_NotOvertime_Approval.js"
+    ]
+  },
+  {
+    "outputFileName": "Layouts/RBVH.Stada.Intranet.Branding/scripts/NotOvertimeModule/JSLink_TaskList_NotOvertime_Department.min.js",
+    "inputFiles": [
+      "Layouts/RBVH.Stada.Intranet.Branding/scripts/NotOvertimeModule/JSLink_TaskList_NotOvertime_Department.js"
+    ]
+  },
+  {
+    "outputFileName": "Layouts/RBVH.Stada.Intranet.Branding/scripts/NotOvertimeModule/NotOvertimeByDepartment.min.js",
+    "inputFiles": [
+      "Layouts/RBVH.Stada.Intranet.Branding/scripts/NotOvertimeModule/NotOvertimeByDepartment.js"
+    ]
+  },
+  //{
+  //  "outputFileName": "Layouts/RBVH.Stada.Intranet.Branding/scripts/NotOvertimeModule/JSLink_NotOvertime.js",
+  //  "inputFiles": [
+  //    "Layouts/RBVH.Stada.Intranet.Branding/scripts/NotOvertimeModule/JSLink_NotOvertimeForm.js",
+  //    "Layouts/RBVH.Stada.Intranet.Branding/scripts/NotOvertimeModule/JSLink_NotOvertimeView.js",
+  //    "Layouts/RBVH.Stada.Intranet.Branding/scripts/NotOvertimeModule/JSLink_TaskList_NotOvertime_Approval.js",
+  //    "Layouts/RBVH.Stada.Intranet.Branding/scripts/NotOvertimeModule/JSLink_TaskList_NotOvertime_Department.js"
+  //  ]
+  //},
+  //{
+  //  "outputFileName": "Layouts/RBVH.Stada.Intranet.Branding/scripts/NotOvertimeModule/NotOvertimeByDepartment.min.js",
+  //  "inputFiles": [
+  //    "Layouts/RBVH.Stada.Intranet.Branding/scripts/NotOvertimeModule/NotOvertimeByDepartment.js"
+  //  ]
+  //},
+  {
+    "outputFileName": "Layouts/RBVH.Stada.Intranet.Branding/scripts/OvertimeModule/JSLink_Overtime.js",
+    "inputFiles": [
+      "Layouts/RBVH.Stada.Intranet.Branding/scripts/OvertimeModule/JSLink_ApprovalView.js",
+      "Layouts/RBVH.Stada.Intranet.Branding/scripts/OvertimeModule/JSLink_Management.js",
+      "Layouts/RBVH.Stada.Intranet.Branding/scripts/OvertimeModule/JSLink_MyOverTime_View.js",
+      "Layouts/RBVH.Stada.Intranet.Branding/scripts/OvertimeModule/JSLink_OvertimeDepartments.js"
+    ]
+  },
+  {
+    "outputFileName": "Layouts/RBVH.Stada.Intranet.Branding/scripts/OvertimeModule/JSLink_OvertimeEmployeeDetail.min.js",
+    "inputFiles": [
+      "Layouts/RBVH.Stada.Intranet.Branding/scripts/OvertimeModule/JSLink_OvertimeEmployeeDetail.js"
+    ]
+  },
+  {
+    "outputFileName": "Layouts/RBVH.Stada.Intranet.Branding/scripts/OvertimeModule/JSLink_OvertimeEmployeeDetail_View.min.js",
+    "inputFiles": [
+      "Layouts/RBVH.Stada.Intranet.Branding/scripts/OvertimeModule/JSLink_OvertimeEmployeeDetail_View.js"
+    ]
+  },
+  {
+    "outputFileName": "Layouts/RBVH.Stada.Intranet.Branding/scripts/OvertimeModule/MyOvertime.min.js",
+    "inputFiles": [
+      "Layouts/RBVH.Stada.Intranet.Branding/scripts/OvertimeModule/MyOvertime.js"
+    ]
+  },
+  {
+    "outputFileName": "Layouts/RBVH.Stada.Intranet.Branding/scripts/OvertimeModule/OvertimeByDepartment.min.js",
+    "inputFiles": [
+      "Layouts/RBVH.Stada.Intranet.Branding/scripts/OvertimeModule/OvertimeByDepartment.js"
+    ]
+  },
+  {
+    "outputFileName": "Layouts/RBVH.Stada.Intranet.Branding/scripts/OvertimeModule/OvertimeRequest.min.js",
+    "inputFiles": [
+      "Layouts/RBVH.Stada.Intranet.Branding/scripts/OvertimeModule/OvertimeRequest.js"
+    ]
+  },
+  {
+    "outputFileName": "Layouts/RBVH.Stada.Intranet.Branding/scripts/OverviewModule/Overview.min.js",
+    "inputFiles": [
+      "Layouts/RBVH.Stada.Intranet.Branding/scripts/OverviewModule/Overview.js"
+    ]
+  },
+  {
+    "outputFileName": "Layouts/RBVH.Stada.Intranet.Branding/scripts/OverviewModule/TaskOverview.min.js",
+    "inputFiles": [
+      "Layouts/RBVH.Stada.Intranet.Branding/scripts/OverviewModule/TaskOverview.js"
+    ]
+  },
+  {
+    "outputFileName": "Layouts/RBVH.Stada.Intranet.Branding/scripts/PeoplePicker/peoplepickercontrol.min.js",
+    "inputFiles": [
+      "Layouts/RBVH.Stada.Intranet.Branding/scripts/PeoplePicker/peoplepickercontrol.js"
+    ]
+  },
+  {
+    "outputFileName": "Layouts/RBVH.Stada.Intranet.Branding/scripts/PeoplePicker/peoplepickercontrol_resources.en.min.js",
+    "inputFiles": [
+      "Layouts/RBVH.Stada.Intranet.Branding/scripts/PeoplePicker/peoplepickercontrol_resources.en.js"
+    ]
+  },
+  {
+    "outputFileName": "Layouts/RBVH.Stada.Intranet.Branding/scripts/PeoplePicker/peoplepickercontrol_resources.vi.min.js",
+    "inputFiles": [
+      "Layouts/RBVH.Stada.Intranet.Branding/scripts/PeoplePicker/peoplepickercontrol_resources.vi.js"
+    ]
+  },
+  {
+    "outputFileName": "Layouts/RBVH.Stada.Intranet.Branding/scripts/RecruitmentModule/RecruitmentForm.min.js",
+    "inputFiles": [
+      "Layouts/RBVH.Stada.Intranet.Branding/scripts/RecruitmentModule/RecruitmentForm.js"
+    ]
+  },
+  {
+    "outputFileName": "Layouts/RBVH.Stada.Intranet.Branding/scripts/RequestForDiplomaSupplyModule/RequestForDiplomaSupplyForm.min.js",
+    "inputFiles": [
+      "Layouts/RBVH.Stada.Intranet.Branding/scripts/RequestForDiplomaSupplyModule/RequestForDiplomaSupplyForm.js"
+    ]
+  },
+  {
+    "outputFileName": "Layouts/RBVH.Stada.Intranet.Branding/scripts/RequestModule/RequestForm.min.js",
+    "inputFiles": [
+      "Layouts/RBVH.Stada.Intranet.Branding/scripts/RequestModule/RequestForm.js"
+    ]
+  },
+  {
+    "outputFileName": "Layouts/RBVH.Stada.Intranet.Branding/scripts/RequestModule/RequestList.min.js",
+    "inputFiles": [
+      "Layouts/RBVH.Stada.Intranet.Branding/scripts/RequestModule/RequestList.js"
+    ]
+  },
+  {
+    "outputFileName": "Layouts/RBVH.Stada.Intranet.Branding/scripts/ShiftModule/JSLink_Shift.js",
+    "inputFiles": [
+      "Layouts/RBVH.Stada.Intranet.Branding/scripts/ShiftModule/JSLink_ApprovalView.js",
+      "Layouts/RBVH.Stada.Intranet.Branding/scripts/ShiftModule/JSLink_Management.js",
+      "Layouts/RBVH.Stada.Intranet.Branding/scripts/ShiftModule/JSLink_Management_Department.js",
+      "Layouts/RBVH.Stada.Intranet.Branding/scripts/ShiftModule/JSLink_MyShift_View.js",
+      "Layouts/RBVH.Stada.Intranet.Branding/scripts/ShiftModule/JSLink_ShiftTime.js"
+    ]
+  },
+  {
+    "outputFileName": "Layouts/RBVH.Stada.Intranet.Branding/scripts/ShiftModule/ShiftByDepartment.min.js",
+    "inputFiles": [
+      "Layouts/RBVH.Stada.Intranet.Branding/scripts/ShiftModule/ShiftByDepartment.js"
+    ]
+  },
+  {
+    "outputFileName": "Layouts/RBVH.Stada.Intranet.Branding/scripts/ShiftModule/ShiftManagementPage.min.js",
+    "inputFiles": [
+      "Layouts/RBVH.Stada.Intranet.Branding/scripts/ShiftModule/ShiftManagementPage.js"
+    ]
+  },
+  {
+    "outputFileName": "Layouts/RBVH.Stada.Intranet.Branding/scripts/ShiftModule/ShiftPeoplePicker.min.js",
+    "inputFiles": [
+      "Layouts/RBVH.Stada.Intranet.Branding/scripts/ShiftModule/ShiftPeoplePicker.js"
+    ]
+  },
+  {
+    "outputFileName": "Layouts/RBVH.Stada.Intranet.Branding/scripts/ShiftModule/ShiftRequest.min.js",
+    "inputFiles": [
+      "Layouts/RBVH.Stada.Intranet.Branding/scripts/ShiftModule/ShiftRequest.js"
+    ]
+  },
+  {
+    "outputFileName": "Layouts/RBVH.Stada.Intranet.Branding/scripts/ShiftModule/ViewShiftManagementPage.min.js",
+    "inputFiles": [
+      "Layouts/RBVH.Stada.Intranet.Branding/scripts/ShiftModule/ViewShiftManagementPage.js"
+    ]
+  },
+  {
+    "outputFileName": "Layouts/RBVH.Stada.Intranet.Branding/scripts/ShiftModule/MyShift.min.js",
+    "inputFiles": [
+      "Layouts/RBVH.Stada.Intranet.Branding/scripts/ShiftModule/MyShift.js"
+    ]
+  },
+  {
+    "outputFileName": "Layouts/RBVH.Stada.Intranet.Branding/scripts/SiteTemplate/SetTitleForDepartmentSite.min.js",
+    "inputFiles": [
+      "Layouts/RBVH.Stada.Intranet.Branding/scripts/SiteTemplate/SetTitleForDepartmentSite.js"
+    ]
+  },
+  {
+    "outputFileName": "Layouts/RBVH.Stada.Intranet.Branding/scripts/TaskModule/JSLink_TaksList_View.min.js",
+    "inputFiles": [
+      "Layouts/RBVH.Stada.Intranet.Branding/scripts/TaskModule/JSLink_TaksList_View.js"
+    ]
+  },
+  {
+    "outputFileName": "Layouts/RBVH.Stada.Intranet.Branding/scripts/TaskModule/JSLink_TaskList_NewForm.min.js",
+    "inputFiles": [
+      "Layouts/RBVH.Stada.Intranet.Branding/scripts/TaskModule/JSLink_TaskList_NewForm.js"
+    ]
+  },
+  {
+    "outputFileName": "Layouts/RBVH.Stada.Intranet.Branding/scripts/TransportationModule/JSLink_TaskList_TransportationView_Approval.min.js",
+    "inputFiles": [
+      "Layouts/RBVH.Stada.Intranet.Branding/scripts/TransportationModule/JSLink_TaskList_TransportationView_Approval.js"
+    ]
+  },
+  {
+    "outputFileName": "Layouts/RBVH.Stada.Intranet.Branding/scripts/TransportationModule/JSLink_VehicleManagementForm.min.js",
+    "inputFiles": [
+      "Layouts/RBVH.Stada.Intranet.Branding/scripts/TransportationModule/JSLink_VehicleManagementForm.js"
+    ]
+  },
+  {
+    "outputFileName": "Layouts/RBVH.Stada.Intranet.Branding/scripts/TransportationModule/JSLink_VehicleRequest_Approval.min.js",
+    "inputFiles": [
+      "Layouts/RBVH.Stada.Intranet.Branding/scripts/TransportationModule/JSLink_VehicleRequest_Approval.js"
+    ]
+  },
+  {
+    "outputFileName": "Layouts/RBVH.Stada.Intranet.Branding/scripts/TransportationModule/JSLink_VehicleRequest_ByDepartment.min.js",
+    "inputFiles": [
+      "Layouts/RBVH.Stada.Intranet.Branding/scripts/TransportationModule/JSLink_VehicleRequest_ByDepartment.js"
+    ]
+  },
+  {
+    "outputFileName": "Layouts/RBVH.Stada.Intranet.Branding/scripts/TransportationModule/JSLink_VehicleRequest_List.min.js",
+    "inputFiles": [
+      "Layouts/RBVH.Stada.Intranet.Branding/scripts/TransportationModule/JSLink_VehicleRequest_List.js"
+    ]
+  },
+  {
+    "outputFileName": "Layouts/RBVH.Stada.Intranet.Branding/scripts/TransportationModule/VehicleDepartment.min.js",
+    "inputFiles": [
+      "Layouts/RBVH.Stada.Intranet.Branding/scripts/TransportationModule/VehicleDepartment.js"
+    ]
+  },
+  {
+    "outputFileName": "Layouts/RBVH.Stada.Intranet.Branding/scripts/Common.js",
+    "inputFiles": [
+      "Layouts/RBVH.Stada.Intranet.Branding/scripts/pQuery.js",
+      "Layouts/RBVH.Stada.Intranet.Branding/scripts/Common/Utilities.js",
+      "Layouts/RBVH.Stada.Intranet.Branding/scripts/CommonForm.js", // TODO: Meeting 19.7.2018: Moving into form
+      // "Layouts/RBVH.Stada.Intranet.Branding/scripts/Cookies.js", // TODO: Meeting 19.7.2018: Remove
+      // "Layouts/RBVH.Stada.Intranet.Branding/scripts/Language_flags.js",
+      "Layouts/RBVH.Stada.Intranet.Branding/scripts/HideLeftMenu.js",
+      "Layouts/RBVH.Stada.Intranet.Branding/scripts/DepartmentMenu.js", // TODO: Meeting 19.7.2018: Remove function render list of departments, it will be called in Init.js
+      "Layouts/RBVH.Stada.Intranet.Branding/scripts/MenuItemActive.js", // TODO: Meeting 19.7.2018: Remove setNavigation function , it will be called in Init.js
+      "Layouts/RBVH.Stada.Intranet.Branding/scripts/TopMenuItemActive.js", // TODO: Meeting 19.7.2018: Remove docuement ready function , it will be called in Init.js
+      "Layouts/RBVH.Stada.Intranet.Branding/scripts/Common/Constant.js",
+      "Layouts/RBVH.Stada.Intranet.Branding/scripts/Calendar/CalendarCustomLayout.js", // TODO: Meeting 19.7.2018: Review code
+      //"Layouts/RBVH.Stada.Intranet.Branding/scripts/TaskNotification.js", // TODO: Meeting 19.7.2018: Review code
+
+      "Layouts/RBVH.Stada.Intranet.Branding/scripts/stada.initialization.js"
+    ]
+  },
+  {
+    "outputFileName": "Layouts/RBVH.Stada.Intranet.Branding/libs/jsGrid/jsgrid.common.js",
+    "inputFiles": [
+      "Layouts/RBVH.Stada.Intranet.Branding/libs/jsGrid/jquery-ui.min.js",
+      "Layouts/RBVH.Stada.Intranet.Branding/libs/jsGrid/jsgrid.min.js"
+    ]
+  },
+  {
+    "outputFileName": "Layouts/RBVH.Stada.Intranet.Branding/libs/jsGrid/jsgrid.common.css",
+    "inputFiles": [
+      "Layouts/RBVH.Stada.Intranet.Branding/libs/jsGrid/jquery-ui.min.css",
+      "Layouts/RBVH.Stada.Intranet.Branding/libs/jsGrid/jsgrid.min.css",
+      "Layouts/RBVH.Stada.Intranet.Branding/libs/jsGrid/jsgrid-theme.min.css"
+    ]
+  },
+  {
+    "outputFileName": "Layouts/RBVH.Stada.Intranet.Branding/libs/jsGrid/jsgrid.theme-bundle.css",
+    "inputFiles": [
+      "Layouts/RBVH.Stada.Intranet.Branding/libs/jsGrid/jsgrid.min.css",
+      "Layouts/RBVH.Stada.Intranet.Branding/libs/jsGrid/jsgrid-theme.min.css"
+    ]
+  },
+  {
+    "outputFileName": "Layouts/RBVH.Stada.Intranet.Branding/scripts/ShiftModule/shift.admin.js",
+    "inputFiles": [
+      "Layouts/RBVH.Stada.Intranet.Branding/scripts/ShiftModule/MyShift.min.js",
+      "Layouts/RBVH.Stada.Intranet.Branding/scripts/ShiftModule/ShiftByDepartment.min.js"
+    ]
+  },
+  {
+    "outputFileName": "Layouts/RBVH.Stada.Intranet.Branding/scripts/OvertimeModule/overtime.admin.js",
+    "inputFiles": [
+      "Layouts/RBVH.Stada.Intranet.Branding/scripts/OvertimeModule/MyOvertime.min.js",
+      "Layouts/RBVH.Stada.Intranet.Branding/scripts/OvertimeModule/OvertimeByDepartment.min.js"
+    ]
+  },
+  {
+    "outputFileName": "Layouts/RBVH.Stada.Intranet.Branding/scripts/OvertimeModule/overtime.manager.js",
+    "inputFiles": [
+      "Layouts/RBVH.Stada.Intranet.Branding/scripts/OvertimeModule/MyOvertime.min.js",
+      "Layouts/RBVH.Stada.Intranet.Branding/scripts/OvertimeModule/OvertimeByDepartment.min.js"
+    ]
+  },
+  { // Vehicle
+    "outputFileName": "Layouts/RBVH.Stada.Intranet.Branding/scripts/TransportationModule/JSLink_Vehicle.js",
+    "inputFiles": [
+      "Layouts/RBVH.Stada.Intranet.Branding/scripts/TransportationModule/JSLink_VehicleRequest_Approval.js",
+      "Layouts/RBVH.Stada.Intranet.Branding/scripts/TransportationModule/JSLink_VehicleRequest_ByDepartment.js",
+      "Layouts/RBVH.Stada.Intranet.Branding/scripts/TransportationModule/JSLink_VehicleRequest_List.js"
+    ]
+  },
+  { // Bootstrap DatePicker css
+    "outputFileName": "Layouts/RBVH.Stada.Intranet.Branding/libs/Bootstrap/DatePicker/css/datepicker.min.css",
+    "inputFiles": [
+      "Layouts/RBVH.Stada.Intranet.Branding/libs/Bootstrap/DatePicker/css/datepicker.css"
+    ]
+  },
+  { // Bootstrap DatePicker js
+    "outputFileName": "Layouts/RBVH.Stada.Intranet.Branding/libs/Bootstrap/DatePicker/js/bootstrap-datepicker.min.js",
+    "inputFiles": [
+      "Layouts/RBVH.Stada.Intranet.Branding/libs/Bootstrap/DatePicker/js/bootstrap-datepicker.js"
+    ]
+  }
+]

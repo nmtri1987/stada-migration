@@ -28,7 +28,7 @@ namespace RBVH.Stada.Intranet.WebPages.CONTROLTEMPLATES.RBVH.Stada.Controls.Busi
             MyBusinessTripRequestWebPart.ViewGuid = guidViews == null ? "" : guidViews.ID.ToString();
 
             UserHelper userHelper = new UserHelper();
-            EmployeeInfo employeeInfo = userHelper.GetCurrentLoginUser(); 
+            EmployeeInfo employeeInfo = userHelper.GetCurrentLoginUser();
 
             XElement xmlViewDef = XElement.Parse(MyBusinessTripRequestWebPart.XmlDefinition);
             XElement filterElement = BuildViewString(employeeInfo, siteUrl);
@@ -81,14 +81,33 @@ namespace RBVH.Stada.Intranet.WebPages.CONTROLTEMPLATES.RBVH.Stada.Controls.Busi
 
                 if (itemIds != null && itemIds.Count > 0)
                 {
-                    filterStr = "";
-                    foreach (var itemId in itemIds)
+                    int pageSize = 500;
+                    if (itemIds.Count > pageSize)
                     {
-                        filterStr += string.Format("<Value Type='Counter'>{0}</Value>", itemId);
+                        int numOfPages = itemIds.Count % pageSize > 0 ? (itemIds.Count / pageSize) + 1 : itemIds.Count / pageSize;
+                        var i = 0;
+                        List<int> idRange = itemIds.GetRange(pageSize * i, i == (numOfPages - 1) ? itemIds.Count - pageSize * i : pageSize);
+                        filterStr = "";
+                        foreach (var itemId in idRange)
+                        {
+                            filterStr += string.Format("<Value Type='Counter'>{0}</Value>", itemId);
+                        }
+                        if (!string.IsNullOrEmpty(filterStr))
+                        {
+                            filterStr = string.Format("<In><FieldRef Name='ID'/><Values>{0}</Values></In>", filterStr);
+                        }
                     }
-                    if (!string.IsNullOrEmpty(filterStr))
+                    else
                     {
-                        filterStr = string.Format("<In><FieldRef Name='ID'/><Values>{0}</Values></In>", filterStr);
+                        filterStr = "";
+                        foreach (var itemId in itemIds)
+                        {
+                            filterStr += string.Format("<Value Type='Counter'>{0}</Value>", itemId);
+                        }
+                        if (!string.IsNullOrEmpty(filterStr))
+                        {
+                            filterStr = string.Format("<In><FieldRef Name='ID'/><Values>{0}</Values></In>", filterStr);
+                        }
                     }
                 }
             }

@@ -18,3 +18,37 @@
 .ui-dialog-titlebar-close {
 	min-width: 15px;
 }
+
+.nav-tabs>li.active>a, .nav-tabs>li.active>a:hover, .nav-tabs>li.active>a:focus {
+	background-color: rgb(233, 233, 233) !important;
+	color: #333333 !important;
+	font-weight: bold;
+}
+
+.nav-tabs>li>a {
+	color: #333333;
+}
+
+#jsGrid-unit-test .jsgrid-row td:nth-child(3),
+#jsGrid-unit-test .jsgrid-row td:nth-child(5),
+#jsGrid-unit-test .jsgrid-row td:nth-child(7),
+#jsGrid-unit-test .jsgrid-row td:nth-child(9),
+#jsGrid-unit-test .jsgrid-alt-row td:nth-child(3),
+#jsGrid-unit-test .jsgrid-alt-row td:nth-child(5),
+#jsGrid-unit-test .jsgrid-alt-row td:nth-child(7),
+#jsGrid-unit-test .jsgrid-alt-row td:nth-child(9)
+{
+	background-color: #f9f9ea;
+}
+
+#jsGrid-unit-test .jsgrid-cell span.label {
+	font-size: 12px;
+}
+
+.jsgrid-alt-row>.jsgrid-cell {
+    background-color: #f3f3f3 !important;
+}
+
+.jsgrid-cell {
+    border: 1px solid #dcd5d5 !important;
+}

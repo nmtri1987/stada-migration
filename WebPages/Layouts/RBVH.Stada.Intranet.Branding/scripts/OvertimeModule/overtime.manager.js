@@ -1,2 +1,243 @@
-(function(){RBVH.Stada.javascript.common.NamespaceManager.register("RBVH.Stada.WebPages.pages");RBVH.Stada.WebPages.pages.MyOvertime=function(n){var t=window.location.pathname;this.Settings={Id:n.Id,BeginDate:21,PageUrl:"//{0}"+t+"?StartMonth={1}&EndMonth={2}"};$.extend(!0,this.Settings,n);this.Initialize()};RBVH.Stada.WebPages.pages.MyOvertime.prototype={Initialize:function(){var n=this;$(document).ready(function(){n.InitControls();n.RegisterEvents()})},InitControls:function(){var t=this,n,i,r;if($(t.Settings.MonthControlSelector).datepicker({viewMode:"months",minViewMode:"months",format:"mm/yyyy",autoclose:!0}),n=RBVH.Stada.WebPages.Utilities.GetValueByParam("MyStartMonth"),i=RBVH.Stada.WebPages.Utilities.GetValueByParam("MyEndMonth"),!!n==!1||!!i==!1)t.RebindUrl(n,i);else if(r=Date.parse(n),r!=NaN){var u=new Date(r),f=u.getMonth()+1,e=u.getFullYear();$(t.Settings.MonthControlSelector).val(f+"/"+e)}},RegisterEvents:function(){var n=this;$(n.Settings.MonthControlSelector).on("changeDate",function(t){var i=t.date.getMonth(),r=t.date.getYear()+1900,u,f;$(".datepicker").hide();u=new Date(r,i,1);f=new Date(r,i+1,0,23,59,59);n.RebindUrl(n.toISOStringTZ(u),n.toISOStringTZ(f),!0)})},toISOStringTZ:function(n){var t=(new Date).getTimezoneOffset()*6e4;return new Date(n.getTime()-t).toISOString().slice(0,-1)},RebindUrl:function(n,t){var s=this,o=window.location.hash,i=window.location.href.split("#")[0],f=new Date,u=n,r,e;u=typeof u!="undefined"?u:s.toISOStringTZ(new Date(f.getFullYear(),f.getMonth(),1));r=t;r=typeof r!="undefined"?r:s.toISOStringTZ(new Date(f.getFullYear(),f.getMonth()+1,0,23,59,59));e="";e="";e=i.indexOf("?")>=0?"&":"?";i=i.indexOf("MyStartMonth=")>0?i.replace(/(MyStartMonth=)[^\&]+/,"$1"+u):i+e+"MyStartMonth="+u;i=i.indexOf("MyEndMonth=")>0?i.replace(/(MyEndMonth=)[^\&]+/,"$1"+r):i+"&MyEndMonth="+r;o&&o.length>0&&(i+=o);window.location.href=i}}})();
-RBVH.Stada.javascript.common.NamespaceManager.register("RBVH.Stada.WebPages.pages");RBVH.Stada.WebPages.pages.OvertimeByDepartment=function(n){var t=window.location.pathname;this.Settings={Id:n.Id,BeginDate:21,PageUrl:window.location.protocol+"//{0}"+t+"?Month={1}&Year={2}",DepartmentList:window.location.protocol+"//{0}/_vti_bin/Services/Department/DepartmentService.svc/GetDepartmentsByLcid/{1}/{2}",CurrentDepartmentId:0};$.extend(!0,this.Settings,n);this.Initialize()};RBVH.Stada.WebPages.pages.OvertimeByDepartment.prototype={Initialize:function(){var n=this;$(document).ready(function(){SP.SOD.executeFunc("SP.js","SP.ClientContext",function(){n.InitControls();n.RegisterEvents()})})},InitControls:function(){var n=this;$(n.Settings.FromDateControlSelector).datepicker({viewMode:"days",minViewMode:"days",format:"dd/mm/yyyy",autoclose:!0});$(n.Settings.ToDateControlSelector).datepicker({viewMode:"days",minViewMode:"days",format:"dd/mm/yyyy",autoclose:!0});n.PopulateDepartment();var t=RBVH.Stada.WebPages.Utilities.GetValueByParam("AdminFromDate"),i=RBVH.Stada.WebPages.Utilities.GetValueByParam("AdminToDate"),r=n.Settings.CurrentDepartmentId>0?n.Settings.CurrentDepartmentId:RBVH.Stada.WebPages.Utilities.GetValueByParam("AdminDeptId");!!t==!1||!!i==!1||!!r==!1?n.RebindUrl(t,i,r):(n.Settings.DepartmentId=r,n.Settings.FromDate=t,n.Settings.ToDate=i,$(n.Settings.DepartmentControlSelector).val(r),$(n.Settings.FromDateControlSelector).val(t),$(n.Settings.ToDateControlSelector).val(i),n.Settings.CurrentDepartmentId>0&&$(n.Settings.DepartmentControlSelector).prop("disabled",!0))},RegisterEvents:function(){var n=this;$(n.Settings.FromDateControlSelector).on("changeDate",function(){n.RebindUrl($(this).val(),n.Settings.ToDate,n.Settings.DepartmentId,!0)});$(n.Settings.ToDateControlSelector).on("changeDate",function(){n.RebindUrl(n.Settings.FromDate,$(this).val(),n.Settings.DepartmentId,!0)});$(n.Settings.DepartmentControlSelector).on("change",function(){n.Settings.DepartmentId=$(this).val();n.RebindUrl(n.Settings.FromDate,n.Settings.ToDate,n.Settings.DepartmentId,!0)})},PopulateDepartment:function(){var n=this,t=_spPageContextInfo.currentLanguage,i=_rbvhContext.EmployeeInfo!=null?_rbvhContext.EmployeeInfo.FactoryLocation.LookupId:2,r=RBVH.Stada.WebPages.Utilities.String.format(n.Settings.DepartmentList,location.host,t,i);$(n.Settings.DepartmentControlSelector).attr("disabled",!1);$(n.Settings.DepartmentControlSelector).empty();$.ajax({type:"GET",url:r,contentType:"application/json; charset=utf-8",dataType:"json",async:!1,success:function(t){n.Settings.CurrentDepartmentId==0&&$(n.Settings.DepartmentControlSelector).append($("<option>").attr("value",n.Settings.CurrentDepartmentId).text(Functions.getDisplayTextOfItemAll(_spPageContextInfo.currentLanguage)));$(t).each(function(){$(n.Settings.DepartmentControlSelector).append($("<option>").attr("value",this.Id).text(this.DepartmentName))});n.Settings.DepartmentId=$(n.Settings.DepartmentControlSelector).val()}})},toISOStringTZ:function(n){var t=(new Date).getTimezoneOffset()*6e4;return new Date(n.getTime()-t).toISOString().slice(0,-1)},RebindUrl:function(n,t,i,r){var l=this,h=window.location.hash,u=window.location.href.split("#")[0],f=new Date,s=n,e,o,c;s=typeof s!="undefined"?s:l.toISOStringTZ(new Date(f.getFullYear(),f.getMonth(),f.getDay()));e=t;e=typeof e!="undefined"?e:l.toISOStringTZ(new Date(f.getFullYear(),f.getMonth(),f.getDay()));o=i;o=typeof o!="undefined"?o:"0";c="";c=u.indexOf("?")>=0?"&":"?";u=u.indexOf("AdminFromDate=")>0?u.replace(/(AdminFromDate=)[^\&]+/,"$1"+s):u+c+"AdminFromDate="+s;u=u.indexOf("AdminToDate=")>0?u.replace(/(AdminToDate=)[^\&]+/,"$1"+e):u+"&AdminToDate="+e;u=u.indexOf("AdminDeptId=")>0?u.replace(/(AdminDeptId=)[^\&]+/,"$1"+o):u+"&AdminDeptId="+o;!r||(u=ViewUtilities.Paging.RemovePagingURL(u));h&&h.length>0&&(u+=h);window.location.href=u}};
+(function () {
+    RBVH.Stada.javascript.common.NamespaceManager.register("RBVH.Stada.WebPages.pages");
+    RBVH.Stada.WebPages.pages.MyOvertime = function (settings) {
+        var locationPath = window.location.pathname;
+        this.Settings = {
+            Id: settings.Id,
+            BeginDate: 21,
+            PageUrl: '//{0}' + locationPath + '?StartMonth={1}&EndMonth={2}',
+        };
+        $.extend(true, this.Settings, settings);
+        this.Initialize();
+    };
+    RBVH.Stada.WebPages.pages.MyOvertime.prototype = {
+        Initialize: function () {
+            var that = this;
+            $(document).ready(function () {
+                that.InitControls();
+                that.RegisterEvents();
+            });
+        },
+        InitControls: function () {
+            var that = this;
+            $(that.Settings.MonthControlSelector).datepicker({
+                viewMode: "months",
+                minViewMode: "months",
+                format: "mm/yyyy",
+                autoclose: true
+            });
+
+            var StartMonth = RBVH.Stada.WebPages.Utilities.GetValueByParam('MyStartMonth');
+            var EndMonth = RBVH.Stada.WebPages.Utilities.GetValueByParam('MyEndMonth');
+            if (!!StartMonth == false || !!EndMonth == false)
+                that.RebindUrl(StartMonth, EndMonth);
+            else {
+                var startMonthTimeSpan = Date.parse(StartMonth);
+                if (startMonthTimeSpan != NaN) {
+                    var startMonth = new Date(startMonthTimeSpan);
+                    var currentMonth = startMonth.getMonth() + 1;
+                    var currentYear = startMonth.getFullYear();
+                    $(that.Settings.MonthControlSelector).val(currentMonth + '/' + currentYear);
+                }
+            }
+        },
+        RegisterEvents: function () {
+            var that = this;
+            $(that.Settings.MonthControlSelector).on('changeDate', function (ev) {
+                var dpMonth = ev.date.getMonth(); // 0 -> 11
+                var dpYear = ev.date.getYear() + 1900;
+                $('.datepicker').hide();
+
+                var firstDayDp = new Date(dpYear, dpMonth, 1);
+                var lastDayDp = new Date(dpYear, dpMonth + 1, 0, 23, 59, 59);
+                that.RebindUrl(that.toISOStringTZ(firstDayDp), that.toISOStringTZ(lastDayDp), true);
+                //__doPostBack('', (dpMonth + 1) + '/' + dpYear);
+            });
+        },
+        toISOStringTZ: function (dateObject) {
+            var tzoffset = (new Date()).getTimezoneOffset() * 60000; //offset in milliseconds
+            var localISOTime = (new Date(dateObject.getTime() - tzoffset)).toISOString().slice(0, -1);
+            return localISOTime;
+        },
+        RebindUrl: function (StartMonth, EndMonth, selected) {
+            var that = this;
+            var hashtag = window.location.hash;
+            var url = window.location.href.split('#')[0];
+            var date = new Date();
+            var firstDay = StartMonth;
+            firstDay = typeof firstDay != 'undefined' ? firstDay : that.toISOStringTZ(new Date(date.getFullYear(), date.getMonth(), 1));
+            var lastDay = EndMonth;
+            lastDay = typeof lastDay != 'undefined' ? lastDay : that.toISOStringTZ(new Date(date.getFullYear(), date.getMonth() + 1, 0, 23, 59, 59));
+            
+            var paddingParam = '';
+            var paddingParam = '';
+            if (url.indexOf('?') >= 0) {
+                paddingParam = '&';
+            }
+            else {
+                paddingParam = '?';
+            }
+            if (url.indexOf('MyStartMonth=') > 0)
+                url = url.replace(/(MyStartMonth=)[^\&]+/, '$1' + firstDay);
+            else
+                url = url + paddingParam + 'MyStartMonth=' + firstDay;
+            if (url.indexOf('MyEndMonth=') > 0)
+                url = url.replace(/(MyEndMonth=)[^\&]+/, '$1' + lastDay);
+            else
+                url = url + '&MyEndMonth=' + lastDay;
+
+            if (hashtag && hashtag.length > 0) {
+                url += hashtag;
+            }
+            window.location.href = url;
+        }
+    };
+})();
+RBVH.Stada.javascript.common.NamespaceManager.register("RBVH.Stada.WebPages.pages");
+RBVH.Stada.WebPages.pages.OvertimeByDepartment = function (settings) {
+    var locationPath = window.location.pathname;
+    this.Settings = {
+        Id: settings.Id,
+        BeginDate: 21,
+        PageUrl: window.location.protocol + '//{0}' + locationPath + '?Month={1}&Year={2}',
+        DepartmentList: window.location.protocol + '//{0}/_vti_bin/Services/Department/DepartmentService.svc/GetDepartmentsByLcid/{1}/{2}',
+        CurrentDepartmentId: 0
+    };
+    $.extend(true, this.Settings, settings);
+    this.Initialize();
+};
+RBVH.Stada.WebPages.pages.OvertimeByDepartment.prototype = {
+    Initialize: function () {
+        var that = this;
+        $(document).ready(function () {
+            SP.SOD.executeFunc('SP.js', 'SP.ClientContext',
+	            function () {
+	                that.InitControls();
+	                that.RegisterEvents();
+	            });
+        });
+    },
+    InitControls: function () {
+        var that = this;
+        $(that.Settings.FromDateControlSelector).datepicker({
+            viewMode: "days",
+            minViewMode: "days",
+            format: "dd/mm/yyyy",
+            autoclose: true
+        });
+        $(that.Settings.ToDateControlSelector).datepicker({
+            viewMode: "days",
+            minViewMode: "days",
+            format: "dd/mm/yyyy",
+            autoclose: true
+        });
+
+        that.PopulateDepartment();
+
+        var FromDate = RBVH.Stada.WebPages.Utilities.GetValueByParam('AdminFromDate');
+        var ToDate = RBVH.Stada.WebPages.Utilities.GetValueByParam('AdminToDate');
+        var DeptId = that.Settings.CurrentDepartmentId > 0 ? that.Settings.CurrentDepartmentId : RBVH.Stada.WebPages.Utilities.GetValueByParam('AdminDeptId');
+        if (!!FromDate == false || !!ToDate == false || !!DeptId == false)
+            that.RebindUrl(FromDate, ToDate, DeptId);
+        else {
+            that.Settings.DepartmentId = DeptId;
+            that.Settings.FromDate = FromDate;
+            that.Settings.ToDate = ToDate;
+            $(that.Settings.DepartmentControlSelector).val(DeptId);
+
+            $(that.Settings.FromDateControlSelector).val(FromDate);
+            $(that.Settings.ToDateControlSelector).val(ToDate);
+
+            if (that.Settings.CurrentDepartmentId > 0)
+                $(that.Settings.DepartmentControlSelector).prop('disabled', true);
+        }
+    },
+
+    RegisterEvents: function () {
+        var that = this;
+
+        $(that.Settings.FromDateControlSelector).on('changeDate', function (ev) {
+            that.RebindUrl($(this).val(), that.Settings.ToDate, that.Settings.DepartmentId, true);
+        });
+        $(that.Settings.ToDateControlSelector).on('changeDate', function (ev) {
+            that.RebindUrl(that.Settings.FromDate, $(this).val(), that.Settings.DepartmentId, true);
+        });
+
+        $(that.Settings.DepartmentControlSelector).on('change', function () {
+            that.Settings.DepartmentId = $(this).val();
+            that.RebindUrl(that.Settings.FromDate, that.Settings.ToDate, that.Settings.DepartmentId, true);
+        });
+    },
+
+    PopulateDepartment: function () {
+        var that = this;
+        var lcid = _spPageContextInfo.currentLanguage;
+        var locationId = _rbvhContext.EmployeeInfo != null ? _rbvhContext.EmployeeInfo.FactoryLocation.LookupId : 2;
+        var url = RBVH.Stada.WebPages.Utilities.String.format(that.Settings.DepartmentList, location.host, lcid, locationId);
+        $(that.Settings.DepartmentControlSelector).attr("disabled", false);
+        $(that.Settings.DepartmentControlSelector).empty();
+        $.ajax({
+            type: "GET",
+            url: url,
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            async: false,
+            success: function (result) {
+                if (that.Settings.CurrentDepartmentId == 0) {
+                    $(that.Settings.DepartmentControlSelector).append($("<option>").attr('value', that.Settings.CurrentDepartmentId).text(Functions.getDisplayTextOfItemAll(_spPageContextInfo.currentLanguage)));
+                }
+
+                $(result).each(function () {
+                    $(that.Settings.DepartmentControlSelector).append($("<option>").attr('value', this.Id).text(this.DepartmentName));
+                });
+                that.Settings.DepartmentId = $(that.Settings.DepartmentControlSelector).val();
+            }
+        });
+    },
+    toISOStringTZ: function (dateObject) {
+        var tzoffset = (new Date()).getTimezoneOffset() * 60000; //offset in milliseconds
+        var localISOTime = (new Date(dateObject.getTime() - tzoffset)).toISOString().slice(0, -1);
+        return localISOTime;
+    },
+    RebindUrl: function (FromDate, ToDate, AdminDeptId, selected) {
+        var that = this;
+        var hashtag = window.location.hash;
+        var url = window.location.href.split('#')[0];
+        var date = new Date();
+        var firstDay = FromDate;
+        firstDay = typeof firstDay != 'undefined' ? firstDay : that.toISOStringTZ(new Date(date.getFullYear(), date.getMonth(), date.getDay()));
+        var lastDay = ToDate;
+        lastDay = typeof lastDay != 'undefined' ? lastDay : that.toISOStringTZ(new Date(date.getFullYear(), date.getMonth(), date.getDay()));
+
+        var deptId = AdminDeptId;
+        deptId = typeof deptId != 'undefined' ? deptId : '0';
+        var paddingParam = '';
+        if (url.indexOf('?') >= 0) {
+            paddingParam = '&';
+        }
+        else {
+            paddingParam = '?';
+        }
+        if (url.indexOf('AdminFromDate=') > 0)
+            url = url.replace(/(AdminFromDate=)[^\&]+/, '$1' + firstDay);
+        else
+            url = url + paddingParam + 'AdminFromDate=' + firstDay;
+        if (url.indexOf('AdminToDate=') > 0)
+            url = url.replace(/(AdminToDate=)[^\&]+/, '$1' + lastDay);
+        else
+            url = url + '&AdminToDate=' + lastDay;
+        if (url.indexOf('AdminDeptId=') > 0)
+            url = url.replace(/(AdminDeptId=)[^\&]+/, '$1' + deptId);
+        else
+            url = url + '&AdminDeptId=' + deptId;
+
+        if (!!selected) {
+            url = ViewUtilities.Paging.RemovePagingURL(url);
+        }
+
+        if (hashtag && hashtag.length > 0) {
+            url += hashtag;
+        }
+        window.location.href = url;
+    }
+};

@@ -718,22 +718,22 @@
   {
     "outputFileName": "Layouts/RBVH.Stada.Intranet.Branding/scripts/ShiftModule/shift.admin.js",
     "inputFiles": [
-      "Layouts/RBVH.Stada.Intranet.Branding/scripts/ShiftModule/MyShift.min.js",
-      "Layouts/RBVH.Stada.Intranet.Branding/scripts/ShiftModule/ShiftByDepartment.min.js"
+      "Layouts/RBVH.Stada.Intranet.Branding/scripts/ShiftModule/MyShift.js",
+      "Layouts/RBVH.Stada.Intranet.Branding/scripts/ShiftModule/ShiftByDepartment.js"
     ]
   },
   {
     "outputFileName": "Layouts/RBVH.Stada.Intranet.Branding/scripts/OvertimeModule/overtime.admin.js",
     "inputFiles": [
-      "Layouts/RBVH.Stada.Intranet.Branding/scripts/OvertimeModule/MyOvertime.min.js",
-      "Layouts/RBVH.Stada.Intranet.Branding/scripts/OvertimeModule/OvertimeByDepartment.min.js"
+      "Layouts/RBVH.Stada.Intranet.Branding/scripts/OvertimeModule/MyOvertime.js",
+      "Layouts/RBVH.Stada.Intranet.Branding/scripts/OvertimeModule/OvertimeByDepartment.js"
     ]
   },
   {
     "outputFileName": "Layouts/RBVH.Stada.Intranet.Branding/scripts/OvertimeModule/overtime.manager.js",
     "inputFiles": [
-      "Layouts/RBVH.Stada.Intranet.Branding/scripts/OvertimeModule/MyOvertime.min.js",
-      "Layouts/RBVH.Stada.Intranet.Branding/scripts/OvertimeModule/OvertimeByDepartment.min.js"
+      "Layouts/RBVH.Stada.Intranet.Branding/scripts/OvertimeModule/MyOvertime.js",
+      "Layouts/RBVH.Stada.Intranet.Branding/scripts/OvertimeModule/OvertimeByDepartment.js"
     ]
   },
   { // Vehicle

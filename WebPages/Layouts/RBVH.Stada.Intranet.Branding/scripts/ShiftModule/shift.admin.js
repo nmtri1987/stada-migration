@@ -1,2 +1,240 @@
-RBVH.Stada.javascript.common.NamespaceManager.register("RBVH.Stada.WebPages.pages");RBVH.Stada.WebPages.pages.MyShift=function(n){var t=window.location.pathname;this.Settings={Id:n.Id,BeginDate:21,PageUrl:"//{0}"+t+"?Month={1}&Year={2}"};$.extend(!0,this.Settings,n);this.Initialize()};RBVH.Stada.WebPages.pages.MyShift.prototype={Initialize:function(){var n=this;$(document).ready(function(){n.InitControls();n.RegisterEvents()})},InitControls:function(){var i=this,n,t;$(i.Settings.MonthControlSelector).datepicker({viewMode:"months",minViewMode:"months",format:"mm/yyyy",autoclose:!0});n=RBVH.Stada.WebPages.Utilities.GetValueByParam("MyMonth");t=RBVH.Stada.WebPages.Utilities.GetValueByParam("MyYear");!!n==!1||!!t==!1?i.RebindUrl(n,t):$(i.Settings.MonthControlSelector).val(n+"/"+t)},RegisterEvents:function(){var n=this;$(n.Settings.MonthControlSelector).on("changeDate",function(t){var i=t.date.getMonth()+1,r=t.date.getYear()+1900;$(".datepicker").hide();n.RebindUrl(i,r,!0)})},RebindUrl:function(n,t){var r=n,u=t,e=window.location.hash,i=window.location.href.split("#")[0],f,s,o;(!!n==!1||!!t==!1)&&(f=new Date,s=f.getDate(),r=f.getMonth()+1,u=f.getYear()+1900,s>20&&r++,r==13&&(u++,r=1));o="";o=i.indexOf("?")>=0?"&":"?";i=i.indexOf("MyMonth=")>0?i.replace(/(MyMonth=)[^\&]+/,"$1"+r):i+o+"MyMonth="+r;i=i.indexOf("MyYear=")>0?i.replace(/(MyYear=)[^\&]+/,"$1"+u):i+"&MyYear="+u;e&&e.length>0&&(i+=e);window.location.href=i}};
-RBVH.Stada.javascript.common.NamespaceManager.register("RBVH.Stada.WebPages.pages");RBVH.Stada.WebPages.pages.ShiftByDepartment=function(n){var t=window.location.pathname;this.Settings={Id:n.Id,BeginDate:21,PageUrl:window.location.protocol+"//{0}"+t+"?Month={1}&Year={2}",DepartmentList:window.location.protocol+"//{0}/_vti_bin/Services/Department/DepartmentService.svc/GetDepartmentForShift/{1}/{2}",CurrentDepartmentId:0};$.extend(!0,this.Settings,n);this.Initialize()};RBVH.Stada.WebPages.pages.ShiftByDepartment.prototype={Initialize:function(){var n=this;SP.SOD.executeFunc("SP.js","SP.ClientContext",function(){n.InitControls();n.RegisterEvents()})},InitControls:function(){var n=this;$(n.Settings.MonthControlSelector).datepicker({viewMode:"months",minViewMode:"months",format:"mm/yyyy",autoclose:!0});var t=RBVH.Stada.WebPages.Utilities.GetValueByParam("AdminMonth"),i=RBVH.Stada.WebPages.Utilities.GetValueByParam("AdminYear"),r=n.Settings.CurrentDepartmentId>0?n.Settings.CurrentDepartmentId:RBVH.Stada.WebPages.Utilities.GetValueByParam("AdminDeptId");!!t==!1||!!i==!1||!!r==!1?n.RebindUrl(t,i,r):(n.PopulateDepartment(),n.Settings.DepartmentId=r,n.Settings.Month=t,n.Settings.Year=i,$(n.Settings.MonthControlSelector).val(t+"/"+i),$(n.Settings.DepartmentControlSelector).val(r));n.Settings.CurrentDepartmentId>0&&$(n.Settings.DepartmentControlSelector).prop("disabled",!0)},RegisterEvents:function(){var n=this;$(n.Settings.MonthControlSelector).on("changeDate",function(t){var i=t.date.getMonth()+1,r=t.date.getYear()+1900;$(".datepicker").hide();n.RebindUrl(i,r,n.Settings.DepartmentId,!0)});$(n.Settings.DepartmentControlSelector).on("change",function(){n.Settings.DepartmentId=$(this).val();n.RebindUrl(n.Settings.Month,n.Settings.Year,n.Settings.DepartmentId,!0)})},PopulateDepartment:function(){var n=this,t=_spPageContextInfo.currentLanguage,i=_rbvhContext.EmployeeInfo!=null?_rbvhContext.EmployeeInfo.FactoryLocation.LookupId:2,r=RBVH.Stada.WebPages.Utilities.String.format(n.Settings.DepartmentList,location.host,t,i);$(n.Settings.DepartmentControlSelector).attr("disabled",!1);$(n.Settings.DepartmentControlSelector).empty();$.ajax({type:"GET",url:r,contentType:"application/json; charset=utf-8",dataType:"json",async:!1,success:function(t){n.Settings.CurrentDepartmentId==0&&$(n.Settings.DepartmentControlSelector).append($("<option>").attr("value",n.Settings.CurrentDepartmentId).text(Functions.getDisplayTextOfItemAll(_spPageContextInfo.currentLanguage)));$(t).each(function(){$(n.Settings.DepartmentControlSelector).append($("<option>").attr("value",this.Id).text(this.DepartmentName))});n.Settings.DepartmentId=$(n.Settings.DepartmentControlSelector).val()}})},RebindUrl:function(n,t,i,r){var f=n,e=t,h=window.location.hash,u=window.location.href.split("#")[0],o=i,s,l,c;(!!n==!1||!!t==!1)&&(s=new Date,l=s.getDate(),f=s.getMonth()+1,e=s.getYear()+1900,l>20&&f++,f==13&&(e++,f=1));o=typeof o!="undefined"?i:"0";c="";c=u.indexOf("?")>=0?"&":"?";u=u.indexOf("AdminMonth=")>0?u.replace(/(AdminMonth=)[^\&]+/,"$1"+f):u+c+"AdminMonth="+f;u=u.indexOf("AdminYear=")>0?u.replace(/(AdminYear=)[^\&]+/,"$1"+e):u+"&AdminYear="+e;u=u.indexOf("AdminDeptId=")>0?u.replace(/(AdminDeptId=)[^\&]+/,"$1"+o):u+"&AdminDeptId="+o;!r||(u=ViewUtilities.Paging.RemovePagingURL(u));h&&h.length>0&&(u+=h);window.location.href=u}};
+RBVH.Stada.javascript.common.NamespaceManager.register("RBVH.Stada.WebPages.pages");
+RBVH.Stada.WebPages.pages.MyShift = function (settings) {
+    var locationPath = window.location.pathname;
+    this.Settings = {
+        Id: settings.Id,
+        BeginDate: 21,
+        PageUrl: '//{0}' + locationPath + '?Month={1}&Year={2}',
+    };
+    $.extend(true, this.Settings, settings);
+    this.Initialize();
+};
+RBVH.Stada.WebPages.pages.MyShift.prototype = {
+    Initialize: function () {
+        var that = this;
+        $(document).ready(function () {
+            that.InitControls();
+            that.RegisterEvents();
+        });
+    },
+
+    InitControls: function () {
+        var that = this;
+        $(that.Settings.MonthControlSelector).datepicker({
+            viewMode: "months",
+            minViewMode: "months",
+            format: "mm/yyyy",
+            autoclose: true
+        });
+
+        var Month = RBVH.Stada.WebPages.Utilities.GetValueByParam('MyMonth');
+        var Year = RBVH.Stada.WebPages.Utilities.GetValueByParam('MyYear');
+        if (!!Month == false || !!Year == false)
+            that.RebindUrl(Month, Year);
+        else
+        {
+            $(that.Settings.MonthControlSelector).val(Month + '/' + Year);
+        }
+    },
+
+    RegisterEvents: function () {
+        var that = this;
+
+        $(that.Settings.MonthControlSelector).on('changeDate', function (ev) {
+            var dpMonth = ev.date.getMonth() + 1; // 0 -> 11
+            var dpYear = ev.date.getYear() + 1900;
+            $('.datepicker').hide();
+            that.RebindUrl(dpMonth, dpYear, true);
+            //__doPostBack('', (dpMonth + 1) + '/' + dpYear);
+        });
+    },
+
+    RebindUrl: function (Month, Year, selected) {
+        var month = Month;
+        var year = Year;
+
+        var hashtag = window.location.hash;
+        var url = window.location.href.split('#')[0];
+
+        if (!!Month == false || !!Year == false) {
+            var today = new Date();
+            var day = today.getDate();
+            month = today.getMonth() + 1; // 0 -> 11
+            year = today.getYear() + 1900;
+            if (day > 20)
+                month++;
+            if (month == 13) {
+                year++;
+                month = 1;
+            }
+        }
+
+        var paddingParam = '';
+        if (url.indexOf('?') >= 0) {
+            paddingParam = '&';
+        }
+        else {
+            paddingParam = '?';
+        }
+        if (url.indexOf('MyMonth=') > 0)
+            url = url.replace(/(MyMonth=)[^\&]+/, '$1' + month);
+        else
+            url = url + paddingParam + 'MyMonth=' + month;
+        if (url.indexOf('MyYear=') > 0)
+            url = url.replace(/(MyYear=)[^\&]+/, '$1' + year);
+        else
+            url = url + '&MyYear=' + year;
+
+        if (hashtag && hashtag.length > 0) {
+            url += hashtag;
+        }
+        window.location.href = url;
+    }
+};
+RBVH.Stada.javascript.common.NamespaceManager.register("RBVH.Stada.WebPages.pages");
+RBVH.Stada.WebPages.pages.ShiftByDepartment = function (settings) {
+    var locationPath = window.location.pathname;
+    this.Settings = {
+        Id: settings.Id,
+        BeginDate: 21,
+        PageUrl: window.location.protocol + '//{0}' + locationPath + '?Month={1}&Year={2}',
+        DepartmentList: window.location.protocol + '//{0}/_vti_bin/Services/Department/DepartmentService.svc/GetDepartmentForShift/{1}/{2}',
+        CurrentDepartmentId: 0
+    };
+
+    $.extend(true, this.Settings, settings);
+
+    this.Initialize();
+};
+RBVH.Stada.WebPages.pages.ShiftByDepartment.prototype = {
+    Initialize: function () {
+        var that = this;
+        SP.SOD.executeFunc('SP.js', 'SP.ClientContext',
+	        function () {
+	            that.InitControls();
+	            that.RegisterEvents();
+	        });
+    },
+
+    InitControls: function () {
+        var that = this;
+        $(that.Settings.MonthControlSelector).datepicker({
+            viewMode: "months",
+            minViewMode: "months",
+            format: "mm/yyyy",
+            autoclose: true
+        });
+
+        var Month = RBVH.Stada.WebPages.Utilities.GetValueByParam('AdminMonth');
+        var Year = RBVH.Stada.WebPages.Utilities.GetValueByParam('AdminYear');
+        var DeptId = that.Settings.CurrentDepartmentId > 0 ? that.Settings.CurrentDepartmentId : RBVH.Stada.WebPages.Utilities.GetValueByParam('AdminDeptId');
+        if (!!Month == false || !!Year == false || !!DeptId == false)
+            that.RebindUrl(Month, Year, DeptId);
+        else {
+            that.PopulateDepartment();
+            that.Settings.DepartmentId = DeptId;
+            that.Settings.Month = Month;
+            that.Settings.Year = Year;
+            $(that.Settings.MonthControlSelector).val(Month + '/' + Year);
+            $(that.Settings.DepartmentControlSelector).val(DeptId);
+        }
+
+        if (that.Settings.CurrentDepartmentId > 0)
+            $(that.Settings.DepartmentControlSelector).prop('disabled', true);
+    },
+
+    RegisterEvents: function () {
+        var that = this;
+
+        $(that.Settings.MonthControlSelector).on('changeDate', function (ev) {
+            var dpMonth = ev.date.getMonth() + 1; // 0 -> 11
+            var dpYear = ev.date.getYear() + 1900;
+            $('.datepicker').hide();
+            that.RebindUrl(dpMonth, dpYear, that.Settings.DepartmentId, true);
+            //__doPostBack('', (dpMonth + 1) + '/' + dpYear);
+        });
+
+        $(that.Settings.DepartmentControlSelector).on('change', function () {
+            that.Settings.DepartmentId = $(this).val();
+            that.RebindUrl(that.Settings.Month, that.Settings.Year, that.Settings.DepartmentId, true);
+        });
+    },
+
+    PopulateDepartment: function () {
+        var that = this;
+        var lcid = _spPageContextInfo.currentLanguage;
+        var locationId = _rbvhContext.EmployeeInfo != null ? _rbvhContext.EmployeeInfo.FactoryLocation.LookupId : 2;
+        var url = RBVH.Stada.WebPages.Utilities.String.format(that.Settings.DepartmentList, location.host, lcid, locationId);
+        $(that.Settings.DepartmentControlSelector).attr("disabled", false);
+        $(that.Settings.DepartmentControlSelector).empty();
+        $.ajax({
+            type: "GET",
+            url: url,
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            async: false,
+            success: function (result) {
+                if (that.Settings.CurrentDepartmentId == 0) {
+                    $(that.Settings.DepartmentControlSelector).append($("<option>").attr('value', that.Settings.CurrentDepartmentId).text(Functions.getDisplayTextOfItemAll(_spPageContextInfo.currentLanguage)));
+                }
+
+                $(result).each(function () {
+                    $(that.Settings.DepartmentControlSelector).append($("<option>").attr('value', this.Id).text(this.DepartmentName));
+                });
+                that.Settings.DepartmentId = $(that.Settings.DepartmentControlSelector).val();
+            }
+        });
+    },
+
+    RebindUrl: function (Month, Year, DeptId, selected) {
+        var month = Month;
+        var year = Year;
+
+        var hashtag = window.location.hash;
+        //window.location.hash = '';
+        var url = window.location.href.split('#')[0];
+
+        var deptId = DeptId;
+        if (!!Month == false || !!Year == false) {
+            var today = new Date();
+            var day = today.getDate();
+            month = today.getMonth() + 1; // 0 -> 11
+            year = today.getYear() + 1900;
+            if (day > 20)
+                month++;
+            if (month == 13) {
+                year++;
+                month = 1;
+            }
+        }
+        deptId = typeof deptId != 'undefined' ? DeptId : '0';
+        var paddingParam = '';
+        if (url.indexOf('?') >= 0) {
+            paddingParam = '&';
+        }
+        else {
+            paddingParam = '?';
+        }
+        if (url.indexOf('AdminMonth=') > 0)
+            url = url.replace(/(AdminMonth=)[^\&]+/, '$1' + month);
+        else
+            url = url + paddingParam + 'AdminMonth=' + month;
+        if (url.indexOf('AdminYear=') > 0)
+            url = url.replace(/(AdminYear=)[^\&]+/, '$1' + year);
+        else
+            url = url + '&AdminYear=' + year;
+        if (url.indexOf('AdminDeptId=') > 0)
+            url = url.replace(/(AdminDeptId=)[^\&]+/, '$1' + deptId);
+        else
+            url = url + '&AdminDeptId=' + deptId;
+
+        if (!!selected) {
+            url = ViewUtilities.Paging.RemovePagingURL(url);
+        }
+
+        if (hashtag && hashtag.length > 0) {
+            url += hashtag;
+        }
+        window.location.href = url;
+    }
+};

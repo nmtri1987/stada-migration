@@ -15,7 +15,7 @@
     <script type="text/javascript" src="/styles/libs/highchart/exporting.js"></script>
     
     <script type="text/javascript" src="/styles/libs/jsGrid/jsgrid.common.min.js?v=CD44ED56-260A-4C8D-A2FE-A3A3FB20FE5C"></script>
-    <script type="text/javascript" src="/styles/scripts/OverviewModule/Overview.min.js?v=A39DB549-89B1-463C-A897-A9D0D8C0C7C4"></script>
+    <script type="text/javascript" src="/styles/scripts/OverviewModule/Overview.min.js?v=E200B3CD-8F34-4D94-8D1E-9F280D99BBF9"></script>
 </asp:Content>
 
 <asp:Content ID="PageTitle" ContentPlaceHolderID="PlaceHolderPageTitle" runat="server">

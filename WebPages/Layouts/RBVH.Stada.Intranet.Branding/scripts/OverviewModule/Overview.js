@@ -24,6 +24,7 @@ RBVH.Stada.WebPages.pages.Overview = function (settings) {
             Position: '',
             IsBOD: false,
             Condition: '',
+            Top: 20000,
         },
         Grid:
         {
@@ -127,37 +128,126 @@ RBVH.Stada.WebPages.pages.Overview.prototype =
         });
 
         if (moduleObj && moduleObj.length > 0) {
-            if (moduleObj[0].ListURL.toLowerCase() == "/lists/freightmanagement" || moduleObj[0].ListURL.toLowerCase() == "/lists/businesstripmanagement"
-                || moduleObj[0].ListURL.toLowerCase() == "/lists/leavemanagement" || moduleObj[0].ListURL.toLowerCase() == "/lists/vehiclemanagement") {
-                var requestDueDate = (new Date(taskObj.ListItemDueDate)).setHours(0, 0, 0, 0);
-                if (requestDueDate.valueOf() <= currentDate.valueOf()) {
-                    return that.Settings.Condition.WaitingApprovalToday;
+            if (moduleObj[0].ListURL.toLowerCase() == "/lists/shiftmanagement") {
+                return that.Settings.Condition.WaitingApprovalToday;
+            }
+            else if (moduleObj[0].ListURL.toLowerCase() == "/lists/changeshiftmanagement") {
+                if (taskObj.ListItemDueDate && taskObj.ListItemDueDate.length > 0) {
+                    var requestDueDate = (new Date(taskObj.ListItemDueDate)).setHours(0, 0, 0, 0);
+                    var tomorrow = new Date(currentDate);
+                    tomorrow.setDate(tomorrow.getDate() + 1);
+                    if (requestDueDate && ((requestDueDate.valueOf() == currentDate.valueOf()) || (requestDueDate.valueOf() == tomorrow.valueOf()))) {
+                        return that.Settings.Condition.WaitingApprovalToday;
+                    }
+                    else if (requestDueDate && (requestDueDate.valueOf() > tomorrow.valueOf())) {
+                        return that.Settings.Condition.WaitingApproval;
+                    }
                 }
-                else {
-                    return that.Settings.Condition.WaitingApproval;
+            }
+            else if (moduleObj[0].ListURL.toLowerCase() == "/lists/overtimemanagement") {
+                if (taskObj.ListItemDueDate && taskObj.ListItemDueDate.length > 0) {
+                    var requestDueDate = (new Date(taskObj.ListItemDueDate)).setHours(0, 0, 0, 0);
+                    if (requestDueDate && requestDueDate.valueOf() >= currentDate.valueOf()) {
+                        return that.Settings.Condition.WaitingApprovalToday;
+                    }
+                }
+            }
+            else if (moduleObj[0].ListURL.toLowerCase() == "/lists/notovertimemanagement") {
+                if (taskObj.ListItemDueDate && taskObj.ListItemDueDate.length > 0) {
+                    var requestDueDate = (new Date(taskObj.ListItemDueDate)).setHours(0, 0, 0, 0);
+                    var tomorrow = new Date(currentDate);
+                    tomorrow.setDate(tomorrow.getDate() + 1);
+                    if (requestDueDate && ((requestDueDate.valueOf() == currentDate.valueOf()) || (requestDueDate.valueOf() == tomorrow.valueOf()))) {
+                        return that.Settings.Condition.WaitingApprovalToday;
+                    }
+                    else if (requestDueDate && requestDueDate.valueOf() > tomorrow.valueOf()) {
+                        return that.Settings.Condition.WaitingApproval;
+                    }
+                }
+            }
+            else if (moduleObj[0].ListURL.toLowerCase() == "/lists/leavemanagement") {
+                if (taskObj.ListItemDueDate && taskObj.ListItemDueDate.length > 0) {
+                    var requestDueDate = (new Date(taskObj.ListItemDueDate)).setHours(0, 0, 0, 0);
+                    var tomorrow = new Date(currentDate);
+                    tomorrow.setDate(tomorrow.getDate() + 1);
+                    if (requestDueDate && ((requestDueDate.valueOf() == currentDate.valueOf()) || (requestDueDate.valueOf() == tomorrow.valueOf()))) {
+                        return that.Settings.Condition.WaitingApprovalToday;
+                    }
+                    else if (requestDueDate && requestDueDate.valueOf() > tomorrow.valueOf()) {
+                        return that.Settings.Condition.WaitingApproval;
+                    }
+                }
+            }
+            else if (moduleObj[0].ListURL.toLowerCase() == "/lists/vehiclemanagement") {
+                if (taskObj.ListItemDueDate && taskObj.ListItemDueDate.length > 0) {
+                    var requestDueDate = (new Date(taskObj.ListItemDueDate)).setHours(0, 0, 0, 0);
+                    var tomorrow = new Date(currentDate);
+                    tomorrow.setDate(tomorrow.getDate() + 1);
+                    if (requestDueDate && ((requestDueDate.valueOf() == currentDate.valueOf()) || (requestDueDate.valueOf() == tomorrow.valueOf()))) {
+                        return that.Settings.Condition.WaitingApprovalToday;
+                    }
+                    else if (requestDueDate && requestDueDate.valueOf() > tomorrow.valueOf()) {
+                        return that.Settings.Condition.WaitingApproval;
+                    }
+                }
+            }
+            else if (moduleObj[0].ListURL.toLowerCase() == "/lists/freightmanagement") {
+                if (taskObj.ListItemDueDate && taskObj.ListItemDueDate.length > 0) {
+                    var requestDueDate = (new Date(taskObj.ListItemDueDate)).setHours(0, 0, 0, 0);
+                    if (requestDueDate && (requestDueDate.valueOf() >= currentDate.valueOf())) {
+                        return that.Settings.Condition.WaitingApprovalToday;
+                    }
+                }
+            }
+            else if (moduleObj[0].ListURL.toLowerCase() == "/lists/businesstripmanagement") {
+                if (taskObj.ListItemDueDate && taskObj.ListItemDueDate.length > 0) {
+                    var requestDueDate = (new Date(taskObj.ListItemDueDate)).setHours(0, 0, 0, 0);
+                    var tomorrow = new Date(currentDate);
+                    tomorrow.setDate(tomorrow.getDate() + 1);
+                    if (requestDueDate && ((requestDueDate.valueOf() == currentDate.valueOf()) || (requestDueDate.valueOf() == tomorrow.valueOf()))) {
+                        return that.Settings.Condition.WaitingApprovalToday;
+                    }
+                    else if (requestDueDate && requestDueDate.valueOf() > tomorrow.valueOf()) {
+                        return that.Settings.Condition.WaitingApproval;
+                    }
                 }
             }
             else if (moduleObj[0].ListURL.toLowerCase() == "/lists/requests") {
-                if (taskObj.ListItemDueDate && taskObj.ListItemDueDate.length > 0) {
-                    var requestDueDate = (new Date(taskObj.ListItemDueDate)).setHours(0, 0, 0, 0);
-                    if (requestDueDate.valueOf() <= currentDate.valueOf()) {
-                        return that.Settings.Condition.WaitingApprovalToday;
+                if (taskObj.ApprovalStatusEN && taskObj.ApprovalStatusEN.NameEN && taskObj.ApprovalStatusEN.NameEN.toLowerCase() == "in-process") {
+                    return that.Settings.Condition.InProcess;
+                }
+                else {
+                    if (taskObj.ListItemDueDate && taskObj.ListItemDueDate.length > 0) {
+                        var requestDueDate = (new Date(taskObj.ListItemDueDate)).setHours(0, 0, 0, 0);
+                        var tomorrow = new Date(currentDate);
+                        tomorrow.setDate(tomorrow.getDate() + 1);
+                        if (requestDueDate && ((requestDueDate.valueOf() == currentDate.valueOf()) || (requestDueDate.valueOf() == tomorrow.valueOf()))) {
+                            return that.Settings.Condition.WaitingApprovalToday;
+                        }
+                        else if (requestDueDate && requestDueDate.valueOf() > tomorrow.valueOf()) {
+                            return that.Settings.Condition.WaitingApproval;
+                        }
                     }
                     else {
                         return that.Settings.Condition.WaitingApproval;
                     }
                 }
             }
-            else if (moduleObj[0].ListURL.toLowerCase() == "/lists/employeerequirementsheets" || moduleObj[0].ListURL.toLowerCase() == "/lists/requestfordiplomasupplies") {
+            else if (moduleObj[0].ListURL.toLowerCase() == "/lists/employeerequirementsheets") {
                 if (taskObj.ListItemDueDate && taskObj.ListItemDueDate.length > 0) {
                     var requestDueDate = (new Date(taskObj.ListItemDueDate)).setHours(0, 0, 0, 0);
-                    if (requestDueDate.valueOf() <= currentDate.valueOf()) {
-                        return that.Settings.Condition.WaitingApprovalToday;
-                    }
-                    else {
+                    var maxDueDate = new Date(currentDate);
+                    maxDueDate.setDate(maxDueDate.getDate() + 15 + 1);
+                    if (requestDueDate && (requestDueDate.valueOf() > maxDueDate.valueOf())) {
                         return that.Settings.Condition.WaitingApproval;
                     }
+                    else if (requestDueDate && (requestDueDate.valueOf() > currentDate.valueOf()) && (requestDueDate.valueOf() <= maxDueDate.valueOf())) {
+                        return that.Settings.Condition.WaitingApprovalToday;
+                    }
                 }
+            }
+            else if (moduleObj[0].ListURL.toLowerCase() == "/lists/requestfordiplomasupplies") {
+                return that.Settings.Condition.WaitingApproval;
             }
         }
         return "";
@@ -193,9 +283,9 @@ RBVH.Stada.WebPages.pages.Overview.prototype =
     },
     GetPendingOverview: function () {
         var that = this;
-        var selectCols = '$select=ID,ListItemID,ListItemDueDate,ModuleNameENId';
+        var selectCols = '$select=ID,ListItemID,ListItemDueDate,ModuleNameENId,ApprovalStatusEN/NameEN&$expand=ApprovalStatusEN/NameEN';
         var filterBy = "&$filter=AssignedTo eq " + that.Settings.Data.UserInfoId;
-        var url = _spPageContextInfo.siteAbsoluteUrl + "/_api/web/lists/getByTitle('Task List ToDo')/items?" + selectCols + filterBy;
+        var url = _spPageContextInfo.siteAbsoluteUrl + "/_api/web/lists/getByTitle('Task List ToDo')/items?" + "$top=" + that.Settings.Data.Top + "&" + selectCols + filterBy;
         return $.ajax({
             method: "GET",
             url: url,
@@ -209,7 +299,7 @@ RBVH.Stada.WebPages.pages.Overview.prototype =
         currentDate.setHours(0, 0, 0, 0);
         var filterBy = "&$filter=(AssignedTo eq " + that.Settings.Data.UserInfoId + ")";
         filterBy += " and (Created gt datetime'" + currentDate.toISOString() + "')";
-        var url = _spPageContextInfo.siteAbsoluteUrl + "/_api/web/lists/getByTitle('Task List Done')/items?" + selectCols + filterBy;
+        var url = _spPageContextInfo.siteAbsoluteUrl + "/_api/web/lists/getByTitle('Task List Done')/items?" + "$top=" + that.Settings.Data.Top + "&" + selectCols + filterBy;
         return $.ajax({
             method: "GET",
             url: url,
@@ -218,9 +308,9 @@ RBVH.Stada.WebPages.pages.Overview.prototype =
     },
     GetDetailPendingTask: function () {
         var that = this;
-        var selectCols = '$select=ID,ListItemID,ListItemApprovalUrl,ListItemDescription,ListItemCreatedDate,ListItemDueDate,ListURL,RequesterId,DepartmentENId,ModuleNameENId,ApprovalStatusENId,Requester/EmployeeDisplayName&$expand=Requester/EmployeeDisplayName';
+        var selectCols = '$select=ID,ListItemID,ListItemApprovalUrl,ListItemDescription,ListItemCreatedDate,ListItemDueDate,ListURL,RequesterId,DepartmentENId,ModuleNameENId,ApprovalStatusENId,Requester/EmployeeDisplayName,ApprovalStatusEN/NameEN&$expand=Requester/EmployeeDisplayName,ApprovalStatusEN/NameEN';
         var filterBy = "&$filter=AssignedTo eq " + that.Settings.Data.UserInfoId;
-        var url = _spPageContextInfo.siteAbsoluteUrl + "/_api/web/lists/getByTitle('Task List ToDo')/items?" + selectCols + filterBy;
+        var url = _spPageContextInfo.siteAbsoluteUrl + "/_api/web/lists/getByTitle('Task List ToDo')/items?" + "$top=" + that.Settings.Data.Top + "&" + selectCols + filterBy;
         return $.ajax({
             method: "GET",
             url: url,
@@ -234,7 +324,7 @@ RBVH.Stada.WebPages.pages.Overview.prototype =
         currentDate.setHours(0, 0, 0, 0);
         var filterBy = "&$filter=(AssignedTo eq " + that.Settings.Data.UserInfoId + ")";
         filterBy += " and (Created gt datetime'" + currentDate.toISOString() + "')";
-        var url = _spPageContextInfo.siteAbsoluteUrl + "/_api/web/lists/getByTitle('Task List Done')/items?" + selectCols + filterBy;
+        var url = _spPageContextInfo.siteAbsoluteUrl + "/_api/web/lists/getByTitle('Task List Done')/items?" + "$top=" + that.Settings.Data.Top + "&" + selectCols + filterBy;
         return $.ajax({
             method: "GET",
             url: url,
@@ -349,7 +439,7 @@ RBVH.Stada.WebPages.pages.Overview.prototype =
                                                         break;
                                                     case that.Settings.Condition.InProcess:
                                                         that.Settings.Chart.DataSource.TotalInProcess += 1;
-                                                        taskCondition = that.Settings.Condition.TotalInProcess;
+                                                        taskCondition = that.Settings.Condition.InProcess;
                                                         break;
                                                     default:
                                                         break;
@@ -519,7 +609,6 @@ RBVH.Stada.WebPages.pages.Overview.prototype =
 
             controller: {
                 loadData: function (filter) {
-                    console.log(that.Settings.Data.Condition);
                     if (that.Settings.Data.Condition == '')
                         return [];
 
